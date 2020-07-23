@@ -11,3 +11,15 @@
     padding-top: calc(6rem + 74px);
     padding-bottom: 6rem;
 }
+
+.nav-link {
+    padding: 1.3rem 1.5rem;
+}
+
+.navbar-dark .navbar-brand {
+    color: #00c1f7
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #00c1f7
+}
