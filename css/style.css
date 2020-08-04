@@ -32,3 +32,8 @@
     height: 200px;
     width: 650px;
 }
+
+.footer {
+    position: absolute;
+    width: 100%;
+}
