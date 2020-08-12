@@ -1,0 +1,19 @@
+{
+  "name": "chip-shop",
+  "version": "1.0.0",
+  "description": "A simple website for the company Chip Shop LLC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benklinton/Chip-Shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benklinton/Chip-Shop/issues"
+  },
+  "homepage": "https://github.com/benklinton/Chip-Shop#readme"
+}
