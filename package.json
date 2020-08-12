@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/benklinton/Chip-Shop/issues"
   },
-  "homepage": "https://github.com/benklinton/Chip-Shop#readme"
+  "homepage": "https://github.com/benklinton/Chip-Shop#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
