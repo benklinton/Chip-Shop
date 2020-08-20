@@ -1,3 +1,7 @@
+html,
+body {
+  height: 100%;
+}
 .bg-primary {
     background: linear-gradient(to bottom, rgba(87, 88, 90, 0.575), rgba(87,88,90, 0.575)), url(../css/images/chip.JPG);
     background-image: linear-gradient(rgba(87, 88, 90, 0.575), rgba(87, 88, 90, 0.575)), url(../css/images/chip.JPG);
@@ -33,7 +37,3 @@
     width: 740px;
 }
 
-.footer {
-    position: relative;
-    width: 100%;
-}
