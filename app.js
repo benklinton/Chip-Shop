@@ -1,3 +1,4 @@
+require("dotenv").config();
 function initMap() {
   var address = [
     "11453+Lone+Peak+Pkwy,+Draper,+UT+84020",  //Karl Malone Toyota
@@ -20,8 +21,7 @@ function initMap() {
     "590+N+State+St,+Lindon,+UT+84042", //Low Book Sales of Lindon
 
   ]
-
-  var key = "AIzaSyAUy3IYkX4TUZjw0LihHrQoGdXIUUBUK-g"
+  var key = process.env.KEY
   var labels = "ABCDEFGHIJKLOMOPQRSTUVWXYZ"
   for (var i = 0; i < address.length; i++) {
     var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address[i] + "&key=" + key;
@@ -47,7 +47,7 @@ function initMap() {
   }
 
 }
-
+initMap();
 
 
 
