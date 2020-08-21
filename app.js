@@ -21,25 +21,34 @@ function initMap() {
 
   ]
 
-
-  var labels = "ABCDEFGHIJKLMOPQR"
   var key = "AIzaSyAUy3IYkX4TUZjw0LihHrQoGdXIUUBUK-g"
-  var map = new google.maps.Map(
-    document.getElementById('map'), {
-    center: { lat: 40.3365078, lng: -111.8290607 },
-    zoom: 9
-  });
-  var test = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address[0] + "&key=" + key;
-  console.log(test)
+  var labels = "ABCDEFGHIJKLOMOPQRSTUVWXYZ"
+  for (var i = 0; i < address.length; i++) {
+    var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address[i] + "&key=" + key;
 
-  $.ajax({
-    url: test,
-    method: "GET"
-  })
-  .then(function(response){
-    console.log(response)
-  })
+    $.ajax({
+      url: geocodeURL,
+      method: "GET"
+    }).then(function (response) {
+      var location = response.results[0].geometry.location
+    
+      var map = new google.maps.Map(
+        document.getElementById('map'), {
+        center: { lat: 40.3365078, lng: -111.8290607 },
+        zoom: 9
+      });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+        console.log(marker)
+    });
+
+  }
+
 }
+
+
 
 
 
