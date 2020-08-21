@@ -21,7 +21,6 @@ function initMap() {
 
   ]
   var key = "AIzaSyAUy3IYkX4TUZjw0LihHrQoGdXIUUBUK-g"
-  var labels = "ABCDEFGHIJKLOMOPQRSTUVWXYZ"
   for (var i = 0; i < address.length; i++) {
     var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address[i] + "&key=" + key;
 
@@ -29,6 +28,7 @@ function initMap() {
       url: geocodeURL,
       method: "GET"
     }).then(function (response) {
+        console.log(response)
       var location = response.results[0].geometry.location
     
       var map = new google.maps.Map(
