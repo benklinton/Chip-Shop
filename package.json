@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/benklinton/Chip-Shop#readme",
   "dependencies": {
-    "browserify": "^16.5.2",
-    "dotenv": "^8.2.0"
+    "browserify": "^16.5.2"
   }
 }
