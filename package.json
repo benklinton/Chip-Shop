@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/benklinton/Chip-Shop#readme",
   "dependencies": {
-    "axios": "^0.20.0",
     "dotenv": "^8.2.0"
   }
 }
