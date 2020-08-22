@@ -1,52 +1,38 @@
 function initMap() {
-  var address = [
-    "11453+Lone+Peak+Pkwy,+Draper,+UT+84020",  //Karl Malone Toyota
-    "11000+Frontage+Rd,+South+Jordan,+UT+84095", //Volkswagen Southtowne
-    "1340+500+W,+Salt+Lake+City,+UT+84115", //LHM Super Ford
-    "1800+S+Main+St,+Bountiful,+UT+84010", //Performance Ford
-    "755+N+500+W,+West+Bountiful,+UT+84010", //LHM Dodge Jeep Chrysler Bountiful
-    "2375+S+625+W,+Woods+Cross,+UT+84010", //Murdock Chevy Bountiful 
-    "4646+S+State+St,+Murray,+UT+84107", //Murdock Hyundai of Murray
-    "4594+S+State+St,+Murray,+UT+84107", //Tim Dahle Infiniti
-    "4528+S+State+St,+Murray,+UT+84107", //Tim Dahle Nissan
-    "4595+S+State+St,+Murray,+UT+84107", //Tim Dahle Mazada
-    "452+S,+Lindon+Park+Dr,+Lindon,+UT+84042", //Murdock Hyundai of Lindon
-    "2534+N+200+E,+Spanish+Fork,+UT+84660", //Tim Dahle Ford
-    "11155+Jordan+Gateway,+South+Jordan,+UT+84095", //Tim Dahle Southtowne Nissan
-    "1400+S+Sandhill+Rd,+Orem,+UT+84058", //Brent Brown Toyota
-    "1995+N+University+Pkwy,+Provo,+UT+84604", //LHM Ford Provo
-    "1825+N+University+Pkwy,+Provo,+UT+84604", //LHM Dodge Jeep Chrysler Provo
-    "475+N+State+St,+Lindon,+UT+84042", //Dastrup Auto Inc
-    "590+N+State+St,+Lindon,+UT+84042", //Low Book Sales of Lindon
+  var locations = [
+    {lat: 40.5543772, lng: -111.8983593},  //Karl Malone Toyota
+    {lat: 40.543413, lng: -111.8965277}, //Volkswagen Southtowne
+    {lat: 40.1423249, lng: -111.6484656}, //LHM Super Ford
+    {lat: 40.3293784, lng: -111.7337983}, //Performance Ford
+    {lat: 40.672421, lng: -111.8876254}, //LHM Dodge Jeep Chrysler Bountiful
+    {lat: 40.6722237, lng: -111.8892444}, //Murdock Chevy Bountiful 
+    {lat: 40.6731619, lng: -111.8891222}, //Murdock Hyundai of Murray
+    {lat: 40.870601, lng: -111.8900219}, //Tim Dahle Infiniti
+    {lat: 40.8969909, lng: -111.8932824}, //Tim Dahle Nissan
+    {lat: 40.7396652, lng: -111.9067898}, //Tim Dahle Mazada
+    {lat: 40.5494404, lng: -111.8974743}, //Murdock Hyundai of Lindon
+    {lat: 40.6705572, lng: -111.8893578}, //Tim Dahle Ford
+    {lat: 40.86481759999999, lng: -111.8970275}, //Tim Dahle Southtowne Nissan
+    {lat: 40.2711111, lng: -111.7130556}, //Brent Brown Toyota
+    {lat: 40.3456666, lng: -111.7258247}, //LHM Ford Provo
+    {lat: 40.2593325, lng: -111.6670972}, //LHM Dodge Jeep Chrysler Provo
+    {lat: 40.2594293, lng: -111.6650478}, //Dastrup Auto Inc
+    {lat: 40.3494023, lng: -111.7273238}, //Low Book Sales of Lindon
 
   ]
-  var key = "AIzaSyAUy3IYkX4TUZjw0LihHrQoGdXIUUBUK-g"
-  for (var i = 0; i < address.length; i++) {
-    var geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address[i] + "&key=" + key;
-
-    $.ajax({
-      url: geocodeURL,
-      method: "GET"
-    }).then(function (response) {
-        console.log(response)
-      var location = response.results[0].geometry.location
-    
-      var map = new google.maps.Map(
-        document.getElementById('map'), {
-        center: { lat: 40.3365078, lng: -111.8290607 },
-        zoom: 9
-      });
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
+  var labels = "ABCDEFGHIJKLMNOPQRSTUV"
+  var map = new google.maps.Map(
+    document.getElementById('map'), {
+      center: { lat: 40.3365078, lng: -111.8290607 },
+         zoom: 9
     });
+    for (var i=0; i < locations.length; i++) {
+      var markers = new google.maps.Marker({position: locations[i], label: labels[i % labels.length], map: map});
+    }
+ 
+    var markerCluster = new MarkerClusterer(map, markers,
+      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 
-  }
-
-}
-
-
-
+};
 
 
