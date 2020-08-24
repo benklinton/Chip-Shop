@@ -30,8 +30,6 @@ function initMap() {
       var markers = new google.maps.Marker({position: locations[i], label: labels[i], map: map});
     }
  
-    var markerCluster = new MarkerClusterer(map, markers,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 
 };
 
