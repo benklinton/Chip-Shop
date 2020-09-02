@@ -3,8 +3,8 @@ body {
   height: 100%;
 }
 .bg-primary {
-    background: linear-gradient(to bottom, rgba(87, 88, 90, 0.575), rgba(87,88,90, 0.575)), url(../images/chip.JPG);
-    background-image: linear-gradient(rgba(87, 88, 90, 0.575), rgba(87, 88, 90, 0.575)), url(../images/chip.JPG);
+    background: linear-gradient(to bottom, rgba(87, 88, 90, 0.575), rgba(87,88,90, 0.575)), url(https://storage.googleapis.com/www.chipshoprepair.com/assets/images/chip.jpg);
+    background-image: linear-gradient(rgba(87, 88, 90, 0.575), rgba(87, 88, 90, 0.575)), url(https://storage.googleapis.com/www.chipshoprepair.com/assets/images/chip.jpg);
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
