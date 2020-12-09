@@ -51,3 +51,15 @@ body {
     margin-bottom: 3rem!important;
 }
 
+.font-style-body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-style-header {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.text-format {
+    font-weight: bolder;
+    font-style: italic;
+}
